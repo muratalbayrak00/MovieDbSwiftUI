@@ -9,24 +9,49 @@ import SwiftUI
 
 struct RatingView: View {
     
-    @State var rating: Int
+    struct ClipShape: Shape {
+        let width: Double
+        
+        func path(in rect: CGRect) -> Path {
+            Path(CGRect(x: rect.minX, y: rect.minY, width: width , height: rect.height))
+        }
+    }
+    
+    let rating: Double
+    let maxRating: Int
+    
+    init(rating: Double, maxRating: Int) {
+        self.maxRating = maxRating
+        self.rating = rating
+    }
+
     
     var body: some View {
-        HStack {
-            ForEach(1..<11) { index in
-                Image(systemName: index <= rating ? "star.fill" : "star")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 12, height: 12)
-                    .foregroundColor( index <= rating ? .yellow : .gray)
-                    .onTapGesture {
-                        self.rating = index
-                    }
+        HStack(spacing: 0) {
+            ForEach(0..<maxRating, id: \.self) { _ in
+                Text(Image(systemName: "star"))
+                    .foregroundColor(.yellow)
+                    .aspectRatio(contentMode: .fill)
             }
-        }
+        }.overlay(
+            GeometryReader { reader in
+                HStack(spacing: 0) {
+                    ForEach(0..<maxRating, id: \.self) { _ in
+                        Image(systemName: "star.fill")
+                            .foregroundColor(.yellow)
+                            .aspectRatio(contentMode: .fit)
+                        
+                    }
+                }
+                .clipShape(
+                    ClipShape(width: (reader.size.width / CGFloat(maxRating) * CGFloat(rating)))
+                )
+            }
+        )
+
     }
 }
 
 #Preview {
-    RatingView(rating: 2)
+    RatingView(rating: 7.8, maxRating: 10)
 }

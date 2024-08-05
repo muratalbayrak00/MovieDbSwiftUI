@@ -26,7 +26,7 @@ struct MovieTitleView: View {
                 .font(.subheadline)
                 .foregroundColor(.white)
             
-            RatingView(rating: Int(movie.voteAverage ?? 0))
+            RatingView(rating: movie.voteAverage ?? 0, maxRating: 10)
                 .scaledToFill()
         }
         .frame(width: .infinity, alignment: .leading)

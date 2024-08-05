@@ -22,7 +22,7 @@ struct HomeView: View {
                     .padding(.horizontal)
                 
                 NowPlayingView()
-                   
+                  
                 
                 Text("Popular Movie")
                     .font(.headline)
