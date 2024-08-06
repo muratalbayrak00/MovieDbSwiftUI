@@ -12,8 +12,10 @@ final class SearchViewModel: ObservableObject {
     @Published var searchResult = [Movie]()
     @Published var page = 1
         
-    func fetchMovies(searchText: String) async {
-        guard let url = URL(string: "...\(page)") else {
+    let movieUrl = "https://api.themoviedb.org/3/movie/now_playing?api_key=\(Constants.apikey)&language=en-US&page="
+
+    func fetchMovies() async {// searchText: String boyle bir parametre ekle
+        guard let url = URL(string: "\(movieUrl)\(page)") else {
             return
         }
         

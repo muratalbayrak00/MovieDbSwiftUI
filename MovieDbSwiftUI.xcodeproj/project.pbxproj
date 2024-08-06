@@ -32,6 +32,7 @@
 		D62F1A692C5CCBD400B74EA4 /* CastGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62F1A682C5CCBD400B74EA4 /* CastGridView.swift */; };
 		D62F1A6C2C5CCD3900B74EA4 /* CastRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62F1A6B2C5CCD3900B74EA4 /* CastRowView.swift */; };
 		D62F1A6E2C5CFBA700B74EA4 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62F1A6D2C5CFBA700B74EA4 /* RatingView.swift */; };
+		D6ACB1192C6104A800B13730 /* SearchMovieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6ACB1182C6104A800B13730 /* SearchMovieView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,7 @@
 		D62F1A682C5CCBD400B74EA4 /* CastGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastGridView.swift; sourceTree = "<group>"; };
 		D62F1A6B2C5CCD3900B74EA4 /* CastRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastRowView.swift; sourceTree = "<group>"; };
 		D62F1A6D2C5CFBA700B74EA4 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
+		D6ACB1182C6104A800B13730 /* SearchMovieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMovieView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +153,7 @@
 				D62F1A582C5B623500B74EA4 /* NowPlayingView.swift */,
 				D62F1A5A2C5B624E00B74EA4 /* PopularMovieView.swift */,
 				D62F1A5C2C5B894800B74EA4 /* SearchView.swift */,
+				D6ACB1182C6104A800B13730 /* SearchMovieView.swift */,
 				D62F1A5E2C5CB0EB00B74EA4 /* MovieItemView.swift */,
 				D62F1A602C5CB1A400B74EA4 /* ImageView.swift */,
 				D62F1A622C5CBCCD00B74EA4 /* MovieDetailView.swift */,
@@ -257,6 +260,7 @@
 				D62F1A692C5CCBD400B74EA4 /* CastGridView.swift in Sources */,
 				D62F1A672C5CC16200B74EA4 /* MovieTitleView.swift in Sources */,
 				D62F1A552C5B616D00B74EA4 /* MainView.swift in Sources */,
+				D6ACB1192C6104A800B13730 /* SearchMovieView.swift in Sources */,
 				D62F1A632C5CBCCD00B74EA4 /* MovieDetailView.swift in Sources */,
 				D62F1A5D2C5B894800B74EA4 /* SearchView.swift in Sources */,
 				D62F1A522C5B60A100B74EA4 /* CastViewModel.swift in Sources */,

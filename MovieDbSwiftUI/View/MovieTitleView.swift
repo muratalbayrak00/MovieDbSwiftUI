@@ -17,7 +17,7 @@ struct MovieTitleView: View {
         
         VStack(alignment: .leading) {
             
-            Text(movie.title ?? "nnnn")
+            Text(movie.title)
                 .multilineTextAlignment(.leading)
                 .font(.title2.bold())
                 .foregroundColor(.white)

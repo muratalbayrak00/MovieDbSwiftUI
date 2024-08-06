@@ -8,8 +8,44 @@
 import SwiftUI
 
 struct SearchView: View {
+    
+    @StateObject var viewModel = SearchViewModel()
+    @State private var searchTerm = ""
+
+    var filteredMovies: [Movie] {
+        if searchTerm.isEmpty {
+            return viewModel.searchResult
+        } else {
+            return viewModel.searchResult.filter { $0.title.localizedCaseInsensitiveContains(searchTerm) }
+        }
+    }
+    
     var body: some View {
-        Text("")
+    
+        NavigationStack {
+            ScrollView(.vertical, showsIndicators: true) {
+                VStack {
+                    ForEach(filteredMovies, id: \.id) { movie in
+                        
+                        NavigationLink {
+                            MovieDetailView(movie: movie)
+                        } label: {
+                            SearchMovieView(movie: movie)
+                        }
+                            .padding(.leading, 20)
+                            .padding(.trailing, 20)
+                            .scaledToFill()
+                    }
+                    .frame(maxHeight: 150)
+                }
+            }
+            .navigationTitle("Search Movies")
+            .task {
+                await viewModel.fetchMovies()
+            }
+            .searchable(text: $searchTerm, prompt: "Search Movies")
+        }
+
     }
 }
 
