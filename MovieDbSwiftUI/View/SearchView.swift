@@ -14,9 +14,9 @@ struct SearchView: View {
 
     var filteredMovies: [Movie] {
         if searchTerm.isEmpty {
-            return viewModel.searchResult
+            return Array(Set(viewModel.searchResult))
         } else {
-            return viewModel.searchResult.filter { $0.title.localizedCaseInsensitiveContains(searchTerm) }
+            return Array(Set(viewModel.searchResult.filter { $0.title.localizedCaseInsensitiveContains(searchTerm) }))
         }
     }
     
